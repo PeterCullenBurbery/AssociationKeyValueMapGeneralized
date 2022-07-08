@@ -1,7 +1,8 @@
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["PositionLargest", "Title",
+Cell["AssociationKeyValueMapGeneralized", "Title",
+ CellChangeTimes->{{3.86627460767091*^9, 3.8662746125719185`*^9}},
  CellTags->{"Name", "TabNext", "TemplateCell", "Title"},
  CellID->280836312,ExpressionUUID->"4932ff57-3265-4bcc-a698-5061a3397b36"],
 
@@ -80,7 +81,30 @@ Cell[BoxData[
        RowBox[{"TakeLargest", "[", 
         RowBox[{"list", ",", "n"}], "]"}], "]"}]}], "]"}], ",", "n"}], 
    "]"}]}]], "Input",
- CellID->138327819,ExpressionUUID->"0545d66f-5ec5-41ff-a983-1a97d7f9d1d0"]
+ CellID->138327819,ExpressionUUID->"0545d66f-5ec5-41ff-a983-1a97d7f9d1d0"],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "AssociationKeyValueMapGeneralized", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AssociationKeyValueMapGeneralized", "[", 
+   RowBox[{"f_", ",", 
+    RowBox[{"association_", "?", "AssociationQ"}], ",", "keykey_", ",", 
+    "valuekey_"}], "]"}], ":=", 
+  RowBox[{"Association", "@", 
+   RowBox[{"KeyValueMap", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"#1", "->", 
+       RowBox[{"<|", 
+        RowBox[{
+         RowBox[{"keykey", "->", 
+          RowBox[{"f", "[", "#1", "]"}]}], ",", 
+         RowBox[{"valuekey", "->", "#2"}]}], "|>"}]}], "&"}], ",", 
+     "association"}], "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.866274668285466*^9, 3.866274673912458*^9}},
+ CellLabel->"In[39]:=",
+ CellID->522273781,ExpressionUUID->"4da8cc21-646b-4c74-b2d5-f68a87b5d008"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -115,7 +139,6 @@ then pressing ",
                 If[$OperatingSystem === "MacOSX", "\[ReturnKey]", 
                  "\[EnterKey]"], StandardForm], SingleEvaluation -> True, 
                Evaluator -> "System"], ShowStringCharacters -> False]]], 
-           
            " to add a brief explanation of the function\[CloseCurlyQuote]s \
 behavior for that structure. Pressing ", 
            Cell[
@@ -2563,7 +2586,6 @@ Cell[BoxData[
          StyleBox[
           TemplateBox[{
             CheckboxBox["Script", {False, "Script"}], "\" \"", 
-            
             TemplateBox[{"\"Script\"", "\"Script run in batch mode\""}, 
              "PrettyTooltipTemplate"]},
            "RowDefault"],
@@ -2793,7 +2815,8 @@ list\
 }, Open  ]]
 },
 WindowSize->{756.6, Automatic},
-WindowMargins->{{Automatic, -111}, {22.200000000000045`, Automatic}},
+WindowMargins->{{
+  Automatic, 96.60000000000014}, {-3.6000000000000227`, Automatic}},
 WindowTitle->"Function Resource | Sample Definition Notebook",
 TaggingRules->{"CompatibilityTest" -> HoldComplete[
     BinaryDeserialize[
